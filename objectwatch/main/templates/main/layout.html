@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Object Movement Tracking</title>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <script src="https://kit.fontawesome.com/2047fc0715.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="container"></div>
+<body>
+<!-- Navigation bar -->
+<header>
+    <img src="{% static 'main/img/logo.png' %}">
+    <span class="logo">
+        OMD <!-- Object Movement Detection -->
+    </span>
+    <nav>
+        <ul class="menu">
+            <li><a href="{% url 'contact' %}"><i class="fa-regular fa-paper-plane"></i>Контакты</a></li>
+            <li><a href="{% url 'about' %}"><i class="fa-solid fa-address-card"></i>Про нас</a></li>
+            <li><a href="{% url 'home' %}"><i class="fa-solid fa-house"></i>Главная</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+    <!-- Footer -->
+    <footer>
+           <ul class="menu">
+            <li><a href="{% url 'home' %}"><i class="fa-solid fa-house"></i>Главная</a></li>
+            <li><a href="{% url 'about' %}"><i class="fa-solid fa-address-card"></i>Про нас</a></li>
+            <li><a href="{% url 'contact' %}"><i class="fa-regular fa-paper-plane"></i>Контакты</a></li>
+            </ul>
+        <p>©2023 Object Movement Detection | All Rights Reserved</p>
+    </footer>
+</main>
+
+
+<!--&lt;!&ndash; Video feed &ndash;&gt;-->
+<!--<section>-->
+<!--    <h2>Live Video Feed</h2>-->
+<!--    <div>-->
+<!--        &lt;!&ndash; Embed live video feed from camera &ndash;&gt;-->
+<!--        <iframe src="http://yourcamerafeed.com"></iframe>-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        &lt;!&ndash; Timeline of past video recordings &ndash;&gt;-->
+<!--        <h3>Past Recordings</h3>-->
+<!--        <ul>-->
+<!--            <li><a href="#">Recording 1</a></li>-->
+<!--            <li><a href="#">Recording 2</a></li>-->
+<!--            <li><a href="#">Recording 3</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; Object detection &ndash;&gt;-->
+<!--<section>-->
+<!--    <h2>Object Detection</h2>-->
+<!--    <div>-->
+<!--        &lt;!&ndash; Display detected objects in video feed &ndash;&gt;-->
+<!--        <img src="http://yourdetectionalgorithm.com" alt="Detected object">-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; Alerts &ndash;&gt;-->
+<!--<section>-->
+<!--    <h2>Alerts</h2>-->
+<!--    <div>-->
+<!--        &lt;!&ndash; Display alerts for detected objects or unusual activity &ndash;&gt;-->
+<!--        <p>Alert: Unusual activity detected in Area A at 3:00 PM</p>-->
+<!--        <p>Alert: Suspicious object detected in Area B at 4:30 PM</p>-->
+<!--    </div>-->
+<!--</section>-->
+
+<!--&lt;!&ndash; Search and filters &ndash;&gt;-->
+<!--<section>-->
+<!--    <h2>Search and Filters</h2>-->
+<!--    <form>-->
+<!--        <label for="search">Search for objects:</label>-->
+<!--        <input type="text" id="search" name="search">-->
+<!--        <label for="time">Filter by time:</label>-->
+<!--        <select id="time" name="time">-->
+<!--            <option value="morning">Morning</option>-->
+<!--            <option value="afternoon">Afternoon</option>-->
+<!--            <option value="evening">Evening</option>-->
+<!--        </select>-->
+<!--    </form>-->
+<!--</section>-->
+
+
+</body>
+
+</html>
