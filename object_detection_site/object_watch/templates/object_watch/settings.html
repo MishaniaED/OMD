@@ -1,7 +1,65 @@
 {% extends "object_watch/base.html" %}
 {% block content %}
-<!--Установка пользователем виртуальных линий
-i.	Сделать селектор видеокамер с номерами аудиторий в которых они расположены.
-ii.	Сделать кнопку подтверждения намеченных зон
--->
+<!--Здесь будет список из доступных видеокамер-->
+{% if user.is_authenticated %}
+<div class="container">
+    <div class="row mt-12">
+        <div class="col-md-6">
+            <h3>Select a video camera:</h3>
+        </div>
+        <div class="col-md-6">
+            <select id="camera-selector" class="form-control">
+                <option value="">--Select a camera--</option>
+                <option value="camera1">Camera 1</option>
+                <option value="camera2">Camera 2</option>
+                <option value="camera3">Camera 3</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row mt-10">
+        <div class="col-md-9">
+            <h3 id="camera-title"></h3>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="..."></iframe>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" type="submit">
+                Настроить виртуальные линии
+            </button>
+            <form>
+                <label for="exampleInputEmail1">Количество ноутбуков, которое должно находиться в аудитории</label>
+                <input class="form-control" type="number" placeholder="0">
+            </form>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Подтвердить все изменения</button>
+</div>
+
+{% else %}
+<h1>Войдите или зарегистрируйтесь, чтобы получить доступ к настройкам</h1>
+{% endif %}
+
+<!--<script>-->
+<!--$(document).ready(function() {-->
+<!--  $('#camera-selector').on('change', function() {-->
+<!--    var selectedValue = $(this).val();-->
+<!--    $.ajax({-->
+<!--      url: '/update_camera_selection/',-->
+<!--      type: 'POST',-->
+<!--      data: {-->
+<!--        'selected_value': selectedValue-->
+<!--      },-->
+<!--      success: function(response) {-->
+<!--        console.log('Selection saved.');-->
+<!--      },-->
+<!--      error: function() {-->
+<!--        console.log('Error saving selection.');-->
+<!--      }-->
+<!--    });-->
+<!--  });-->
+<!--});-->
+<!--</script>-->
 {% endblock content %}
