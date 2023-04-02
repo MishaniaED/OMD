@@ -9,10 +9,7 @@
         </div>
         <div class="col-md-6">
             <select id="camera-selector" class="form-control">
-                <option value="">--Select a camera--</option>
                 <option value="camera1">Camera 1</option>
-                <option value="camera2">Camera 2</option>
-                <option value="camera3">Camera 3</option>
             </select>
         </div>
     </div>
@@ -30,7 +27,7 @@
                 Настроить виртуальные линии
             </button>
             <form>
-                <label for="exampleInputEmail1">Количество ноутбуков, которое должно находиться в аудитории</label>
+                <label>Количество ноутбуков, которое должно находиться в выделенных рамках</label>
                 <input class="form-control" type="number" placeholder="0">
             </form>
         </div>
@@ -41,25 +38,4 @@
 {% else %}
 <h1>Войдите или зарегистрируйтесь, чтобы получить доступ к настройкам</h1>
 {% endif %}
-
-<!--<script>-->
-<!--$(document).ready(function() {-->
-<!--  $('#camera-selector').on('change', function() {-->
-<!--    var selectedValue = $(this).val();-->
-<!--    $.ajax({-->
-<!--      url: '/update_camera_selection/',-->
-<!--      type: 'POST',-->
-<!--      data: {-->
-<!--        'selected_value': selectedValue-->
-<!--      },-->
-<!--      success: function(response) {-->
-<!--        console.log('Selection saved.');-->
-<!--      },-->
-<!--      error: function() {-->
-<!--        console.log('Error saving selection.');-->
-<!--      }-->
-<!--    });-->
-<!--  });-->
-<!--});-->
-<!--</script>-->
 {% endblock content %}
