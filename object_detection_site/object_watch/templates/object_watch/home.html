@@ -1,37 +1,33 @@
 {% extends "object_watch/base.html" %}
 {% block content %}
-<!--Здесь будут располагаться видеопотоки с камер -->
 {% if user.is_authenticated %}
-<div class="container">
-    <div class="row mt-12">
-        <div class="col-md-6">
-            <h3>Select a video camera:</h3>
-        </div>
-        <div class="col-md-6">
-            <select id="camera-selector" class="form-control">
-                <option value="camera1">Camera 1</option>
-            </select>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row mt-12">
-        <div class="col-md-12">
+<div class="container p-0">
+    <div class="row">
+        <div class="col-md-9">
+            <!--            Селектор с видеокамерами-->
             <h3 id="camera-title"></h3>
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="..."></iframe>
+                <video id="camera-video" class="embed-responsive-item" autoplay></video>
             </div>
+
         </div>
-        <div class="col-md-2">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Рамки вокруг распознанных объектов
-                </label>
-            </div>
+        <div class="col-md-3">
+            <form method="post" class="form-inline">
+                {% csrf_token %}
+                {{ camera_form.as_p }}
+                <button class="btn btn-primary mb-2" type="submit">Подвердить выбор</button>
+            </form>
         </div>
     </div>
+    <p></p>
 </div>
+<script>
+    // get the video element and the IP camera URL
+    const video = document.getElementById('camera-video');
+    const cameraUrl = 'https://www.youtube.com/watch?v=jfKfPfyJRdk';
+    // set the source of the video element to the IP camera URL
+    video.src = cameraUrl;
+</script>
 {% else %}
 <h1>Войдите или зарегистрируйтесь, чтобы получить доступ к просмотру видеокамер</h1>
 {% endif %}

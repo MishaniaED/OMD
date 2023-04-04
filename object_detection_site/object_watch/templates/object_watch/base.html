@@ -26,6 +26,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-blue fixed-top">
         <div class="container">
             <a class="navbar-brand mr-4" href="{% url 'object_watch-home' %}" >
+<!--                Разобраться почему не видит logo.jpg-->
 <!--                <img src="{% static 'object_watch/img/logo.jpg' %} " width="30" height="30"/>-->
                 OMDetection
             </a>
@@ -56,8 +57,10 @@
     </nav>
 </header>
 <main role="main" class="container">
-    <div class="row">
-        <div class="col-md-8">
+    {% block content %}
+    {% endblock %}
+   <!-- <div class="row">
+        <div class="col">
             {% if messages %}
                 {% for message in messages %}
                     <div class="alert alert-{{ message.tags }}">
@@ -65,11 +68,9 @@
                     </div>
                 {% endfor %}
             {% endif %}
-            {% block content %}
 
-            {% endblock %}
         </div>
-    </div>
+    </div>-->
 </main>
 
 <!-- Футер закреплен внизу, независимо от количества постов на странице -->
