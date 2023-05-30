@@ -9,6 +9,7 @@ class Incidents(models.Model):
     def __str__(self):
         return self.name
 
+
 class VideoData(models.Model):
     filename = models.TextField()
     date_processed = models.DateTimeField()

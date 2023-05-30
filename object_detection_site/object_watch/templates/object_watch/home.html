@@ -7,9 +7,9 @@
             <!--            Селектор с видеокамерами-->
             <h3 id="camera-title"></h3>
             <div class="embed-responsive embed-responsive-16by9">
-<!--                <video id="camera-video" class="embed-responsive-item" autoplay>-->
-<!--                    <source src="{{MEDIA_URL}}/analyzed videos/20230405_134033.mp4" type="video/mp4"></source>-->
-<!--                </video>-->
+                <video id="camera-video" class="embed-responsive-item" autoplay>
+                    <source src="{{MEDIA_URL}}/analyzed videos/20230405_134033.mp4" type="video/mp4"></source>
+                </video>
             </div>
         </div>
         <div class="col-md-3">
@@ -22,13 +22,6 @@
     </div>
     <p></p>
 </div>
-<!--<script>
-    // get the video element and the IP camera URL
-    const video = document.getElementById('camera-video');
-    const cameraUrl = 'https://www.youtube.com/watch?v=jfKfPfyJRdk';
-    // set the source of the video element to the IP camera URL
-    video.src = cameraUrl;
-</script>-->
 {% else %}
 <h1>Войдите или зарегистрируйтесь, чтобы получить доступ к просмотру видеокамер</h1>
 {% endif %}
