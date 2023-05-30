@@ -1,0 +1,28 @@
+{% extends "object_watch/base.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container p-0">
+    <div class="row">
+        <div class="col-md-9">
+            <!--            Селектор с видеокамерами-->
+            <h3 id="camera-title"></h3>
+            <div class="embed-responsive embed-responsive-16by9">
+                <video id="camera-video" class="embed-responsive-item" autoplay>
+                    <source src="{{MEDIA_URL}}/analyzed videos/20230405_134033.mp4" type="video/mp4"></source>
+                </video>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <form method="post" class="form-inline">
+                {% csrf_token %}
+                {{ camera_form.as_p }}
+                <button class="btn btn-primary mb-2" type="submit">Подвердить выбор</button>
+            </form>
+        </div>
+    </div>
+    <p></p>
+</div>
+{% else %}
+<h1>Войдите или зарегистрируйтесь, чтобы получить доступ к просмотру видеокамер</h1>
+{% endif %}
+{% endblock %}
